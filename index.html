@@ -5,7 +5,20 @@
   <title>Hallo von Ben 🎉</title>
 </head>
 <body>
-  <h1>Willkommen auf meiner CD-Demo-Seite!!!</h1>
-  <p>Automatisch deployed mit ❤️ über GitHub Actions.</p>
+  <h1>Willkommen auf meiner CD-Demo-Seite!</h1>
+  <p id="greeting">Automatisch deployed mit ❤️ über GitHub Actions.</p>
+
+  <script>
+    const now = new Date();
+    const hour = now.getHours();
+    let message = "Hallo, lieber Besucher!";
+
+    if (hour < 12) message = "Guten Morgen!";
+    else if (hour < 18) message = "Guten Tag!";
+    else message = "Guten Abend!";
+
+    document.getElementById("greeting").innerText = message + " (Es ist " + now.toLocaleTimeString() + ")";
+  </script>
 </body>
 </html>
+
